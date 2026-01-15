@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flow App</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f5f5f5;
+            --card-bg: #ffffff;
+            --text-main: #222222;
+            --accent: #4f46e5;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                system-ui, -system-ui, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 32px 16px;
+        }
+        .container {
+            width: 100%;
+            max-width: 720px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+            padding: 32px 24px 28px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(79, 70, 229, 0.08);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+        h1 {
+            margin: 0 0 8px;
+            font-size: 28px;
+            letter-spacing: 0.02em;
+        }
+        p.lead {
+            margin: 0 0 20px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+        .section {
+            margin-top: 24px;
+        }
+        .section h2 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+        .section p {
+            margin: 0 0 6px;
+            font-size: 14px;
+            color: #4b5563;
+        }
+        .actions {
+            margin-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 18px;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: transform 0.08s ease, box-shadow 0.08s ease,
+                background-color 0.12s ease;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 12px 22px rgba(79, 70, 229, 0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 30px rgba(79, 70, 229, 0.45);
+        }
+        .btn-ghost {
+            background: transparent;
+            color: #4b5563;
+            border: 1px solid #e5e7eb;
+        }
+        .meta {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 13px;
+            color: #6b7280;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            justify-content: space-between;
+        }
+        .meta a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .meta a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 12px;
+                padding: 24px 18px 22px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="badge">
+            <span class="badge-dot"></span>
+            Flow App · 官方页面
+        </div>
+
+        <h1>Flow App</h1>
+        <p class="lead">
+            Flow 帮助你更专注地记录与管理日常使用体验。这里是应用的官方网站，
+            你可以查看隐私政策并获取最新信息。
+        </p>
+
+        <section class="section">
+            <h2>关于 Flow</h2>
+            <p>· 专注、简单，不打扰你的使用节奏。</p>
+            <p>· 只收集维持服务所必需的最少信息。</p>
+            <p>· 所有重要政策会在本页面保持最新版本。</p>
+        </section>
+
+        <section class="section">
+            <h2>隐私与政策</h2>
+            <p>
+                我们非常重视你的隐私。详细内容请阅读我们的隐私政策，其中包含：
+            </p>
+            <p>· 我们会收集哪些数据</p>
+            <p>· 数据的使用方式与保存时间</p>
+            <p>· 你的权利与联系我们的方式</p>
+        </section>
+
+        <div class="actions">
+            <a class="btn btn-primary" href="privacy_policy.html">
+                查看隐私政策
+            </a>
+            <a class="btn btn-ghost" href="mailto:email619@example.com">
+                联系支持
+            </a>
+        </div>
+
+        <footer class="meta">
+            <span>© <span id="year"></span> Flow App</span>
+            <span>
+                <a href="privacy_policy.html">隐私政策</a>
+            </span>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+</body>
+</html>
